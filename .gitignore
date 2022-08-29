@@ -14,4 +14,4 @@ data_*/
 addons/*
 
 # Visual Studio cache/options directory
-.vs/
+.vs/*
