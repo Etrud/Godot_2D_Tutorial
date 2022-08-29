@@ -10,6 +10,8 @@ export_presets.cfg
 .mono/
 data_*/
 
-
 # Ignore Folders in project on git
 addons/*
+
+# Visual Studio cache/options directory
+.vs/
