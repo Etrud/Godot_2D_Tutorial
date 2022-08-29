@@ -1,12 +1,11 @@
 using Godot;
-using static Player;
 
 public class Player : Area2D
 {
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
-    
+
     [Signal]
     public delegate void hit();
 
