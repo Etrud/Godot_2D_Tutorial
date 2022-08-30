@@ -13,6 +13,7 @@ public class Main : Node
 
     public void GameOver()
     {
+        GetNode<HUD>("HUD").ShowGameOver();
         GetNode<Timer>("MobTimer").Stop();
         GetNode<Timer>("ScoreTimer").Stop();
     }
@@ -20,17 +21,23 @@ public class Main : Node
     public void NewGame()
     {
         Score = 0;
-
+        
         var player = GetNode<Player>("Player");
         var startPosition = GetNode<Position2D>("StartPosition");
+        
         player.Start(startPosition.Position);
-
         GetNode<Timer>("StartTimer").Start();
+        
+        var hud = GetNode<HUD>("HUD");
+        hud.UpdateScore(Score);
+        hud.ShowMessage("Get Ready!");
+        
     }
 
     public void OnScoreTimerTimeout()
     {
         Score++;
+        GetNode<HUD>("HUD").UpdateScore(Score);
     }
 
     public void OnMobTimerTimeout()
@@ -74,7 +81,7 @@ public class Main : Node
     public override void _Ready()
     {
         GD.Randomize();
-        NewGame();
+        //NewGame();
     }
 
     //  // Called every frame. 'delta' is the elapsed time since the previous frame.
