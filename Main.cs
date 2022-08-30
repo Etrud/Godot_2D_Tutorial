@@ -21,7 +21,7 @@ public class Main : Node
     public void NewGame()
     {
         Score = 0;
-        
+        GetTree().CallGroup("mobs", "queue_free"); //telling every mob to delete itself.
         var player = GetNode<Player>("Player");
         var startPosition = GetNode<Position2D>("StartPosition");
         
