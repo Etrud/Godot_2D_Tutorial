@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/roblox-oof-gamespecifications.com_.mp3-5ab26ef7b98e0bd88c5a6c27313c6fb1.mp3str"
+
+[deps]
+
+source_file="res://art/roblox-oof-gamespecifications.com_.mp3"
+dest_files=[ "res://.import/roblox-oof-gamespecifications.com_.mp3-5ab26ef7b98e0bd88c5a6c27313c6fb1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

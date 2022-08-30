@@ -34,8 +34,7 @@ anchor_bottom = 0.5
 margin_top = -201.5
 margin_bottom = -42.5
 custom_fonts/font = SubResource( 1 )
-text = "Dodge the
- monsters!"
+text = "Make it to the afterparty!"
 align = 1
 autowrap = true
 
