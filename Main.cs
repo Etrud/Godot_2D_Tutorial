@@ -10,12 +10,17 @@ public class Main : Node
     public PackedScene MobScene;
 
     public int Score;
+    public int HighScore = 0;
 
     public void GameOver()
     {
+        if (HighScore <= Score)
+        {
+            HighScore = Score;
+        }
         GetNode<AudioStreamPlayer>("Music").Stop();
         GetNode<AudioStreamPlayer>("DeathSound").Play();
-        GetNode<HUD>("HUD").ShowGameOver();
+        GetNode<HUD>("HUD").ShowGameOver(HighScore);
         GetNode<Timer>("MobTimer").Stop();
         GetNode<Timer>("ScoreTimer").Stop();
     }
@@ -26,10 +31,10 @@ public class Main : Node
         GetTree().CallGroup("mobs", "queue_free"); //telling every mob to delete itself.
         var player = GetNode<Player>("Player");
         var startPosition = GetNode<Position2D>("StartPosition");
-        
+
         player.Start(startPosition.Position);
         GetNode<Timer>("StartTimer").Start();
-        
+
         var hud = GetNode<HUD>("HUD");
         hud.UpdateScore(Score);
         hud.ShowMessage("Get Ready!");

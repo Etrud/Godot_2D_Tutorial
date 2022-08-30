@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public class HUD : CanvasLayer
 {
@@ -19,12 +18,17 @@ public class HUD : CanvasLayer
         GetNode<Timer>("MessageTimer").Start();
     }
 
-    async public void ShowGameOver()
+    async public void ShowGameOver(int HighScore)
     {
         ShowMessage("Game Over");
 
         var messageTimer = GetNode<Timer>("MessageTimer");
         await ToSignal(messageTimer, "timeout");
+
+        ShowMessage("Your highscore: " + HighScore);
+
+        await ToSignal(messageTimer, "timeout");
+
 
         var message = GetNode<Label>("Message");
         message.Text = "Dodge the\nCreeps!";
@@ -54,12 +58,12 @@ public class HUD : CanvasLayer
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        
+
     }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+    //  // Called every frame. 'delta' is the elapsed time since the previous frame.
+    //  public override void _Process(float delta)
+    //  {
+    //      
+    //  }
 }
