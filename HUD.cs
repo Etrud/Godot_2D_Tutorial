@@ -29,7 +29,7 @@ public class HUD : CanvasLayer
         await ToSignal(messageTimer, "timeout");
 
         var message = GetNode<Label>("Message");
-        message.Text = "Survive the Monsters!";
+        message.Text = "Capybara Survival!";
         message.Show();
 
         await ToSignal(GetTree().CreateTimer(1), "timeout");
