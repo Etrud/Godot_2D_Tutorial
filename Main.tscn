@@ -4,7 +4,7 @@
 [ext_resource path="res://Main.cs" type="Script" id=2]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=3]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
-[ext_resource path="res://art/Capybara - After Party Pull Up (Full Version 1080p).mp3" type="AudioStream" id=5]
+[ext_resource path="res://art/[AMV] SUPER RISER! 「Do You Remember Love_」.mp3" type="AudioStream" id=5]
 [ext_resource path="res://art/roblox-oof-gamespecifications.com_.mp3" type="AudioStream" id=6]
 
 [sub_resource type="Curve2D" id=1]
