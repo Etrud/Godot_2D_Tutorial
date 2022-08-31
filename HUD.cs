@@ -5,7 +5,6 @@ public class HUD : CanvasLayer
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
-    private int[] highScores = new int[3] {5,15,25};
 
     [Signal]
     public delegate void StartGame();
@@ -27,38 +26,14 @@ public class HUD : CanvasLayer
         await ToSignal(messageTimer, "timeout");
 
         ShowMessage("Your highscore: " + HighScore);
-        updateHighScore(HighScore);
         await ToSignal(messageTimer, "timeout");
-
-        string totals="";
-        foreach (var item in highScores)
-        {
-            totals+=" "+item;
-        }
-
-        ShowMessage("High Scores\n" + highScores[2]+ "\n" + highScores[1] + "\n" + highScores[0]);
-        await ToSignal(messageTimer, "timeout");
-
-
 
         var message = GetNode<Label>("Message");
-        message.Text = "Make it to the afterparty!";
+        message.Text = "Survive the Monsters!";
         message.Show();
 
         await ToSignal(GetTree().CreateTimer(1), "timeout");
         GetNode<Button>("StartButton").Show();
-    }
-
-
-    public void updateHighScore(int highscore)
-    {
-        for( int i = 2; i >= 0; i-- ) { 
-            if (highScores[i]<highscore)
-            {
-                highScores[i] = highscore;
-                break;
-            }
-        }
     }
 
 

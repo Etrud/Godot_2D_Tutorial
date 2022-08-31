@@ -44,7 +44,7 @@ anchor_bottom = 0.5
 margin_top = -201.5
 margin_bottom = -42.5
 custom_fonts/font = SubResource( 1 )
-text = "Make it to the afterparty!"
+text = "Survive the Monsters!"
 align = 1
 autowrap = true
 
